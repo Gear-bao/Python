@@ -27,7 +27,10 @@ def readfile(filename):
 def main():
   if len(sys.argv) >= 2:		# Check the arguments passed to the script
       filenames = sys.argv[1:]
-      for filename in filenames: 				# Iterate for each filename passed in command line argument
+      length = len(filenames)
+      for i in reversed(range(length)):
+          filename=filenames[i]
+      #for filename in filenames: 				# Iterate for each filename passed in command line argument
           if not os.path.isfile(filename):			# Check the File exists
               print ('[-] ' + filename + ' does not exist.')
               filenames.remove(filename)			#remove non existing files from filenames list
